@@ -18,14 +18,4 @@ public class WebConfig implements WebMvcConfigurer {
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(loginUserArgumentResolver);
     }
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("*")
-                //.allowCredentials(true) //주석처리함
-                .allowedOriginPatterns("*") //추가한 부분
-                .exposedHeaders("*");
-    }
 }
